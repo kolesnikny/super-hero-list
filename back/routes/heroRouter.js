@@ -20,7 +20,7 @@ const heroRouter = Router();
 
 heroRouter.post('/', upload.array('files'), HeroController.createHero);
 heroRouter.delete('/:id', upload.array('files'), HeroController.deleteHero);
-heroRouter.get('/all', HeroController.getAllHeroes);
+heroRouter.get('/all', pagination, HeroController.getAllHeroes);
 heroRouter.get('/:id', HeroController.getOneHero);
 
 module.exports = heroRouter;

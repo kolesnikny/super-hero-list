@@ -1,10 +1,10 @@
 import './App.css';
+import HeroesList from './components/HeroesList';
 
 const App = (props) => {
   return (
     <>
-      <h1>Hello world</h1>
-      <p>text</p>
+      <HeroesList></HeroesList>
     </>
   );
 };

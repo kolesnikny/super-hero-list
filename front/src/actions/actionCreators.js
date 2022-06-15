@@ -22,22 +22,25 @@ export const createHeroErrorAction = (error) => {
 };
 
 //Get Heroes
-export const getHeroRequestAction = (values) => {
+export const getHeroRequestAction = ({ limit, offset }) => {
   return {
     type: ACTION_TYPES.GET_HEROES_REQUEST,
-    values,
+    payload: {
+      limit,
+      offset,
+    },
   };
 };
 
-export const getHeroSuccessAction = (values) => {
+export const getHeroSuccessAction = (heroes) => {
   return {
     type: ACTION_TYPES.GET_HEROES_SUCCESS,
-    values,
+    payload: { heroes },
   };
 };
 export const getHeroErrorAction = (error) => {
   return {
     type: ACTION_TYPES.GET_HEROES_ERROR,
-    error,
+    payload: { error },
   };
 };

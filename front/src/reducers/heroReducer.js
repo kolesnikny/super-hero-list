@@ -1,29 +1,32 @@
 import { ACTION_TYPES } from '../actions/actionTypes';
 
 const initState = {
-  users: [],
+  heroes: [],
   error: null,
   isFetching: false,
 };
 
 export const heroReducer = (state = initState, action) => {
   switch (action.type) {
-    case ACTION_TYPES.CREATE_HERO_REQUEST: {
+    case ACTION_TYPES.GET_HEROES_REQUEST: {
       return {
         ...state,
-        isFetching: false,
+        isFetching: true,
       };
     }
-    case ACTION_TYPES.CREATE_HERO_SUCCESS: {
-      const { values } = action;
+    case ACTION_TYPES.GET_HEROES_SUCCESS: {
+      // const { values } = action;
       const { heroes } = state;
+      const {
+        payload: { heroes: newHeroes },
+      } = action;
       return {
         ...state,
-        heroes: [...heroes, values],
         isFetching: false,
+        heroes: [...heroes, ...newHeroes],
       };
     }
-    case ACTION_TYPES.CREATE_HERO_ERROR: {
+    case ACTION_TYPES.GET_HEROES_ERROR: {
       return {
         ...state,
         isFetching: false,
