@@ -13,3 +13,5 @@ export function* getHeroSaga(action) {
     yield put(ActionCreators.getHeroErrorAction(error));
   }
 }
+
+export function createHeroSaga(action) {}

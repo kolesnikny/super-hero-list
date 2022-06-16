@@ -14,6 +14,7 @@ export const createHeroSuccessAction = (values) => {
     values,
   };
 };
+
 export const createHeroErrorAction = (error) => {
   return {
     type: ACTION_TYPES.CREATE_HERO_ERROR,
@@ -21,7 +22,7 @@ export const createHeroErrorAction = (error) => {
   };
 };
 
-//Get Heroes
+//Get all heroes
 export const getHeroRequestAction = ({ limit, offset }) => {
   return {
     type: ACTION_TYPES.GET_HEROES_REQUEST,
@@ -38,6 +39,7 @@ export const getHeroSuccessAction = (heroes) => {
     payload: { heroes },
   };
 };
+
 export const getHeroErrorAction = (error) => {
   return {
     type: ACTION_TYPES.GET_HEROES_ERROR,
