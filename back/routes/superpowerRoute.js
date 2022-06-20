@@ -5,8 +5,6 @@ const powerRouter = Router();
 
 powerRouter.post('/', PowerController.createSuperpower);
 
-powerRouter.get('/', (req, res) => {
-  res.send('hello from wsl');
-});
+powerRouter.get('/', PowerController.getAllSuperpowers);
 
 module.exports = powerRouter;
