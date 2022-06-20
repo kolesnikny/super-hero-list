@@ -46,3 +46,24 @@ export const getHeroErrorAction = (error) => {
     payload: { error },
   };
 };
+
+//Get all powers
+export const getPowersRequestAction = () => {
+  return {
+    type: ACTION_TYPES.GET_POWERS_REQUEST,
+  };
+};
+
+export const getPowersSuccessAction = (superpowers) => {
+  return {
+    type: ACTION_TYPES.GET_POWERS_SUCCESS,
+    payload: { superpowers },
+  };
+};
+
+export const getPowersErrorAction = (error) => {
+  return {
+    type: ACTION_TYPES.GET_POWERS_ERROR,
+    payload: { error },
+  };
+};
